@@ -21,3 +21,17 @@ Movie.create(
   pull off the heist of the century.",
   poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
   rating: 7.0)
+
+List.create(
+  name: "Romantic movies"
+)
+
+List.create(
+  name: "Comedy"
+)
+
+Bookmark.create(
+  comment: "Most romantic movie ever",
+  movie_id: 3,
+  list_id: 1
+)

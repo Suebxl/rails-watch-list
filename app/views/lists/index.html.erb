@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-6">
+      <h1>Find here the lists: </h1>
+        <ul>
+          <% @lists.each do |list|  %>
+          <li><%= link_to list.name, list_path(list) %></li>
+        <% end %>
+        </ul>
+    </div>
+
+  </div>

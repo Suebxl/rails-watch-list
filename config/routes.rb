@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [ :new, :create, :show, :index ]
   end
   resources :movies, only: [:index, :show]
+  resources :bookmarks, only: [:destroy]
 end

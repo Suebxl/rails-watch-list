@@ -12,6 +12,13 @@
         <li class="list-group-item border-bottom-0 "> Title of the movie: <%= bookmark.movie.title %> </li>
         <li class="list-group-item border-bottom-0"> Rating: <%= bookmark.movie.rating %> </li>
          <li class="list-group-item"> Overview: <%= bookmark.movie.overview %> </li>
+         <li class="list-group-item">
+            <%= link_to "remove the movie from the list",
+                          bookmark_path(bookmark),
+                          method: :delete,
+                          data: { confirm: "Are you sure?"} %>
+          </li>
+
       <% end %>
       </ul>
     </div>

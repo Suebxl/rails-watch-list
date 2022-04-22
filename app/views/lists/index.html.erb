@@ -7,16 +7,15 @@
   </div>
 
   <div class="row mt-5">
-    <div class="col-6">
+
       <h4>my lists</h4>
-    <div class="d-flex">
+
       <% @lists.each do |list|  %>
-        <div class="col-4 ">
+
           <%= link_to list.name, list_path(list) %>
           <p>include here a list picture </p>
-        </div>
+
         <% end %>
-    </div>
-    </div>
+
   </div>
 </div>

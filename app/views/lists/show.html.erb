@@ -1,9 +1,11 @@
-<div class="container">
-  <div class="row mt-3">
-    <div class="col-6">
-    <p>list: <%= @list.name %> </p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+    <div class="text-center">
+      <h1>Romantic movies </h1>
     </div>
-  </div>
+</div>
+
+<div class="container">
+
 
 <div class="row">
     <div class="col-6">
@@ -25,5 +27,16 @@
   </div>
  <%= link_to "Back to the list", root_path %>
  <%= link_to "Add a movie to the list", new_list_bookmark_path(@list) %>
+<div class="row">
+    <div class="col-6">
+    <h4>Add a movie to this list: <%= @list.name %></h4>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie  %>
+      <%= f.input :comment %>
+      <%= f.button :submit, class:"btn btn-primary"  %>
+      <% end %>
+    </div>
+  </div>
+
 
 </div>

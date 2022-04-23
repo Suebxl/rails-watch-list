@@ -18,7 +18,8 @@
             <%= link_to "remove the movie from the list",
                           bookmark_path(bookmark),
                           method: :delete,
-                          data: { confirm: "Are you sure?"} %>
+                          data: { confirm: "Are you sure?"},
+                          class: "bg-warning" %>
           </li>
 
       <% end %>

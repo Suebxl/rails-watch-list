@@ -1,12 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
     <div class="text-center">
-      <h1>Save any kind of <strong>movies</strong> </h1>
+      <h1>Save your lists of <strong>movies</strong> </h1>
     </div>
 </div>
 
 <div class="container">
-  <div class="mt-5 mb-3">
-  <h4>My lists</h4>
+  <div class="d-flex justify-content-between mt-5 mb-3">
+    <h4>My lists</h4>
+    <%= render "modal" %>
   </div>
 
   <div class="row justify-content-around gy-5">
@@ -20,5 +21,3 @@
   </div>
 
 </div>
-
-<%= render "modal" %>

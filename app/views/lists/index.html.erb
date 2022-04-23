@@ -15,12 +15,15 @@
         <div class="col-4 col-sm-6 card-category image">
           <div class="text-center">
             <%= link_to list.name, list_path(list) %>
+              <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
           </div>
+
         </div>
+ <%= link_to "remove this list", list_path(list), method: :delete, data: {confirm: "Are you sure?"}, class:"bg-dark" %>
       <% end %>
+
   </div>
 
 </div>
-
-<%= cl_image_tag("https://res.cloudinary.com/degm2tmrv/image/upload/v1650740003/wnyk2gbjoxp5c1rayggt.jpg",
-      width: 400, height: 300, crop: :fill) %>

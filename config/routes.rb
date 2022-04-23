@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :movies, only: [:index, :show]
   resources :bookmarks, only: [:destroy]
+  resources :lists, only: [:destroy]
 end

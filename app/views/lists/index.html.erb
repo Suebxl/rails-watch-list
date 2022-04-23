@@ -12,16 +12,16 @@
 
   <div class="row justify-content-around gy-5">
         <% @lists.each do |list|  %>
-        <div class="col-4 col-sm-6 card-category image">
+        <div class="col-4 col-sm-6 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<% if list.photo.attached? %> <%= cl_image_path list.photo.key, height: 300, crop: :fill %><%end%>')">
           <div class="text-center">
             <%= link_to list.name, list_path(list) %>
-              <% if list.photo.attached? %>
-              <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-              <% end %>
           </div>
 
         </div>
- <%= link_to "remove this list", list_path(list), method: :delete, data: {confirm: "Are you sure?"}, class:"bg-dark" %>
+      <div class="col-6">
+      <%= link_to "remove this list", list_path(list), method: :delete, data: {confirm: "Are you sure?"}, class:"bg-dark" %>
+      </div>
       <% end %>
 
   </div>

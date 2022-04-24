@@ -6,41 +6,40 @@ url('<% if @list.photo.attached? %> <%= cl_image_path @list.photo.key, height: 1
 </div>
 
 <div class="container">
+  <div class="card-product mt-5">
 
+    <% @list.bookmarks.each do |bookmark| %>
+    <%= image_tag bookmark.movie.poster_url, width:200 %>
+      <div class="card-product-title ms-3">
+       <h4> <%= bookmark.movie.title %> </h4>
+      </div>
 
-<div class="row">
-    <div class="col-6">
-      <ul class="list-group">
-      <% @list.bookmarks.each do |bookmark| %>
-        <li class="list-group-item border-bottom-0 "> Title of the movie: <%= bookmark.movie.title %> </li>
-        <li class="list-group-item border-bottom-0"> Rating: <%= bookmark.movie.rating %> </li>
-         <li class="list-group-item"> Overview: <%= bookmark.movie.overview %> </li>
-         <%# <li class="list-group-item"> <%= cl_image_tag @movie.photo.key, alt: "poster of movie", width: 200  %>
-         <li class="list-group-item">
-            <%= link_to "remove the movie from the list",
-                          bookmark_path(bookmark),
-                          method: :delete,
-                          data: { confirm: "Are you sure?"},
-                          class: "bg-warning" %>
-          </li>
+      <div class="card-product-info ms-3">
+            <h5> Overview: <%= bookmark.movie.overview %> </h5>
+            <p> Rating: <%= bookmark.movie.rating %>/10 </p>
 
-      <% end %>
-      </ul>
-    </div>
-  </div>
- <%= link_to "Back to the list", root_path %>
- <%= link_to "Add a movie to the list", new_list_bookmark_path(@list) %>
-<div class="row">
-    <div class="col-6">
-    <h4>Add a movie to this list: <%= @list.name %></h4>
-      <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.association :movie  %>
-      <%= f.input :comment %>
-       <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class:"btn btn-primary"  %>
-      <% end %>
-    </div>
+      </div>
+      <div class="ms-3">
+        <%= link_to "remove the movie",
+          bookmark_path(bookmark),
+          method: :delete,
+          data: { confirm: "Are you sure?"},
+          class: "bg-dark" %>
+      </div>
+    <% end %>
+
   </div>
 
+  <div class="row mt-5">
+      <div class="col-6">
+      <h4>Add a movie to this list: <%= @list.name %></h4>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie  %>
+        <%= f.input :comment %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class:"btn btn-primary"  %>
+        <% end %>
+      </div>
+  </div>
 
 </div>

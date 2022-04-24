@@ -10,18 +10,18 @@
     <%= render "modal" %>
   </div>
 
-  <div class="row justify-content-around gy-5">
+  <div class="row justify-content-between">
         <% @lists.each do |list|  %>
-        <div class="col-4 col-sm-6 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url('<% if list.photo.attached? %> <%= cl_image_path list.photo.key, height: 100, crop: :fill %><%end%>')">
+        <div class="col-4 col-sm-6 card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<% if list.photo.attached? %> <%= cl_image_path list.photo.key, height: 50, crop: :fill %><%end%>')">
           <div class="text-center">
             <%= link_to list.name, list_path(list) %>
           </div>
 
         </div>
-      <div class="col-6 p-5">
+      <%# <div class="col-6 p-5">
       <%= link_to "remove this list", list_path(list), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-dark" %>
-      </div>
+      <%# </div>  %>
       <% end %>
 
   </div>

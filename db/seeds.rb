@@ -8,7 +8,8 @@ Movie.create(
   title: "The Shawshank Redemption",
   overview: "Framed in the 1940s for double murder, upstanding banker Andy Dufresne
   begins a new life at the Shawshank prison",
-  poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7)
+  poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+  rating: 8.7)
 Movie.create(
   title: "Titanic",
   overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the
